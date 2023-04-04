@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --background-color-main: #201b2c;
+    --background-color-card: #2f2841;
+    --btn-color: #77ffc0;
+    --title-color: #77ffc0;
+    --title-card-color: #00ff88;
+    --text-color: #00b771;
+    --border-color: #00b771;
+    --input-text-color: #06ffbd;
+    --input-border-color: #06ffbd;
+    --shadow-card-color: #00000056;
+    --shadow-btn-color: #00ff8052;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.main-login {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color-main);
+}
+
+.left-login {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.left-login>h1 {
+    color: var(--title-color);
+    font-size: 3vw;
+}
+
+.left-login-img {
+    width: 30vw;
+}
+
+.right-login {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-login {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background-color: var(--background-color-card);
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px var(--shadow-card-color);
+}
+
+.card-login h1 {
+    color: var(--title-card-color);
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.card-login a {
+    text-decoration: none;
+    color: var(--title-color);
+}
+
+.btn {
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    background-color: var(--btn-color);
+    padding: 15px;
+    font-size: 16px;
+    border: 0;
+    border-radius: 15px;
+    font-weight: 800;
+    color: var(--background-color-main);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    box-shadow: 0px 10px 40px -12px var(--shadow-btn-color);
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.text {
+    margin-top: 30px;
+    color: var(--text-color);
+}
+
+.form-control {
+    position: relative;
+    margin: 20px 0px 40px;
+    width: 100%;
+}
+
+.form-control input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px var(--border-color) solid;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+    color: var(--text-color);
+    box-sizing: border-box;
+}
+
+.form-control input:focus,
+.form-control input:valid {
+    outline: 0;
+    border-bottom-color: var(--input-border-color);
+}
+
+.form-control label {
+    color: var(--text-color);
+    position: absolute;
+    top: 15px;
+    left: 0;
+}
+
+.form-control label span {
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus+label span,
+.form-control input:valid+label span {
+    color: var(--input-text-color);
+    transform: translateY(-30px);
+}
+
+@media only screen and (max-width: 950px){
+    .card-login{
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .main-login {
+        flex-direction: column;
+    }
+
+    .left-login h1 {
+        display: none;
+    }
+
+    .left-login {
+        width: 100%;
+        height: auto;
+    }
+
+    .right-login {
+        width: 100%;
+        height: auto;
+    }
+
+    .left-login-img {
+        width: 50vw;
+    }
+
+    .text {
+        font-size: 95%;
+    }
+}
